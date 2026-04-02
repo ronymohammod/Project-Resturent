@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>L'ÉDITORIAL | Best Biriyani in Town</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#474747",
+                        "primary-container": "#d4af37",
+                        "on-primary-container": "#554300",
+                        "tertiary-fixed-dim": "#c8c8b0",
+                        "tertiary-fixed": "#e4e4cc",
+                        "tertiary-container": "#b4b49d",
+                        "secondary": "#c8c6c5",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffe088",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "surface-bright": "#393939",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#131313",
+                        "on-tertiary-fixed": "#1b1d0e",
+                        "on-secondary": "#303030",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "surface-container": "#201f1f",
+                        "outline": "#99907c",
+                        "on-tertiary-fixed-variant": "#474836",
+                        "tertiary": "#cfd0b8",
+                        "on-tertiary-container": "#454634",
+                        "primary": "#f2ca50",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-tint": "#e9c349",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-container-low": "#1c1b1b",
+                        "on-tertiary": "#303221",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#474747",
+                        "background": "#131313",
+                        "surface-container-highest": "#353534",
+                        "inverse-primary": "#735c00",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-variant": "#353534",
+                        "outline-variant": "#4d4635",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-background": "#e5e2e1"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif Display", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Manrope', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-serif { font-family: 'Noto Serif Display', serif; }
+
+        /* Navigation */
+        .nav-link {
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #f2ca50;
+            transition: width 0.4s ease;
+        }
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+
+        /* Card Hover */
+        .menu-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.6s ease;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#131313] flex justify-between items-center w-full px-6 md:px-12 py-6 max-w-none transition-all duration-400">
+    <div class="text-2xl font-serif tracking-widest text-[#F2CA50]">L'ÉDITORIAL</div>
+    
+    <!-- Desktop Links -->
+    <div class="hidden md:flex items-center space-x-12">
+        <a href="#menu" class="nav-link text-[#F2CA50] border-b border-[#D4AF37] pb-1 font-label text-xs uppercase tracking-[0.1em]">Menu</a>
+        <a href="#story" class="nav-link text-[#E5E2E1] opacity-80 font-label text-xs uppercase tracking-[0.1em] hover:text-[#F2CA50]">Story</a>
+        <a href="#gallery" class="nav-link text-[#E5E2E1] opacity-80 font-label text-xs uppercase tracking-[0.1em] hover:text-[#F2CA50]">Gallery</a>
+        <a href="#contact" class="nav-link text-[#E5E2E1] opacity-80 font-label text-xs uppercase tracking-[0.1em] hover:text-[#F2CA50]">Contact</a>
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})" 
+                class="hidden lg:block px-6 py-2 border border-outline-variant text-[#F2CA50] font-label text-xs uppercase tracking-[0.1em] hover:bg-outline-variant/10 transition-colors">
+            Order Now
+        </button>
+        <button onclick="showComingSoon()" 
+                class="px-6 py-2 bg-primary-container text-on-primary font-label text-xs uppercase tracking-[0.1em] hover:bg-primary transition-colors">
+            Book Table
+        </button>
+        <button class="md:hidden text-on-surface">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img alt="Premium Hyderabadi Biryani" class="w-full h-full object-cover" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs9UPCK_-S9H0h23FGtJYLL-APek-qSSiRNgkzccAqeHy5uSd-88JGhQDd0NoIu7JQLVTIAU0YrhMSkob8SooSKbxD0Q-GhEkifiUoqJysQ5cZHRbAwr68p-Jv6c2KSS12h8PNQs3Tp4JNklSwAlw20JUuYCFXci9QDoBiuFDDmSdFSMtXDbFqE3IrAPX9hshQHgcz3j-bAcN6H7xWh2gbEd1HcaAB_dqpLgwtDfj4QIw-Z1Oy7UyXjH8UZb7wBiP1HjWJ9I_qx6Mz"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+    </div>
+    <div class="relative z-10 px-6 md:px-12 lg:px-24 w-full max-w-7xl">
+        <div class="max-w-2xl space-y-8">
+            <div class="inline-block px-4 py-1 bg-primary/10 border border-primary/20 text-primary font-label text-[10px] uppercase tracking-[0.2em]">Authentic Heritage</div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-on-surface leading-tight tracking-tight">
+                Best Biriyani <br/><span class="italic text-primary">in Town.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-on-surface-variant font-light leading-relaxed max-w-lg">
+                A symphony of aged basmati, hand-picked spices, and slow-cooked succulent meat. Reimagined for the contemporary connoisseur.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 pt-4">
+                <button onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})" 
+                        class="px-10 py-5 bg-primary-container text-on-primary font-label text-xs uppercase tracking-[0.15em] flex items-center justify-center gap-3 active:scale-95 transition-all">
+                    Order Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+                <button onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})" 
+                        class="px-10 py-5 border border-outline-variant text-on-surface font-label text-xs uppercase tracking-[0.15em] hover:bg-surface-container-high transition-all">
+                    Explore Our Story
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-12 right-12 hidden lg:flex items-center gap-6">
+        <div class="h-[1px] w-24 bg-outline-variant"></div>
+        <span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant">Scroll to explore</span>
+    </div>
+</header>
+
+<!-- About Teaser -->
+<section id="story" class="py-32 px-6 md:px-12 bg-surface">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+        <div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden">
+            <img alt="Executive Chef" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs3ryVpn0srEhtPIpqHD3q_AKqbTDpM4DEgkE3huiQA1tR0a6xEAipLYATH3PvphKO8UcTYN42t4LzEE16b0BjB8VfFEJQJedX4DWzfhN8jaVnBw8YB5ghysq0W0pTV7JOlUN-eFms7tGzE8M43gkHWAgqzIvYwkaaSUivbdH5NzjBvHqOXBHX7tenw_3i6WiMkxjVLjUun6POZVRr3Af8PNQJJgbLPr3YRJxQG8uDxdQChNWAnWTMWB-fLuzWSRuj0FfxuE4lyMyp"/>
+            <div class="absolute bottom-0 right-0 bg-primary-container p-8">
+                <span class="font-serif text-3xl text-on-primary">Est. 1994</span>
+            </div>
+        </div>
+        <div class="space-y-12">
+            <div class="space-y-6">
+                <h2 class="font-label text-xs uppercase tracking-[0.2em] text-primary">The Vision</h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-on-surface leading-snug">The Soul of <br/>Spices.</h3>
+                <p class="text-on-surface-variant leading-loose font-light">
+                    "For us, Biryani is not just a dish; it's a legacy passed down through generations. Every grain of rice tells a story of patience, temperature, and the perfect alchemy of whole spices. Our mission is to elevate traditional street flavors into a fine-dining editorial experience."
+                </p>
+            </div>
+            <div class="pt-6 border-t border-outline-variant/30">
+                <p class="font-serif text-xl italic text-on-surface">— Chef Kabir Al-Saud</p>
+                <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mt-1">Executive Chef &amp; Founder</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Menu (Bento Grid Style) -->
+<section id="menu" class="py-32 bg-surface-container-lowest">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+            <div class="max-w-xl">
+                <h2 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-6">Signature Selection</h2>
+                <h3 class="text-5xl font-serif text-on-surface leading-tight">Masterpieces <br/>of the Season.</h3>
+            </div>
+            <button class="font-label text-xs uppercase tracking-[0.15em] text-[#E5E2E1] border-b border-primary pb-2 flex items-center gap-4 hover:text-primary transition-colors">
+                View Full Menu <span class="material-symbols-outlined text-sm">menu_book</span>
+            </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Large Card -->
+            <div class="md:col-span-8 group menu-card relative overflow-hidden bg-surface-container">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img alt="Awadhi Mutton Biryani" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuD85ECFjKw_aZOwT9h4TXPnf-g-j7qP7P_qjq_c24ocSDJQ_dHY5qb4ktnbYH31K0cAloHnEuCXqgoOOSheUnAOvLs2GllER61XUXn21PJvT7LEmPjkN1O_JOR-L9k3OYeBGTy0UH9uy3yzfGfFdbo3q8X6P72by4FRCirAEoOGGeI8TLLw2A2PWLiwVKkh5EAOeSyacMxbz6uZkCPuL-NtBNhbYR2YnRVei1KLgmdWftbUFLDnOo0XjttKpGfKXeZgrpyh-TvLt49b"/>
+                </div>
+                <div class="p-8 flex justify-between items-center">
+                    <div>
+                        <h4 class="text-2xl font-serif text-on-surface">Awadhi Royal Mutton Biryani</h4>
+                        <p class="text-sm text-on-surface-variant mt-2">Slow-cooked for 12 hours with Dum process.</p>
+                    </div>
+                    <div class="text-3xl font-serif text-primary">$42</div>
+                </div>
+            </div>
+            <!-- Small Card 1 -->
+            <div class="md:col-span-4 group menu-card relative overflow-hidden bg-surface-container">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img alt="Tandoori Prawns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfszNe2JRCWzqf_nR2VaJ28ceE1-5dmRSEdWVOmv61HASxYAG0_7ga0bhr9ipcatCH6TYfOmf9LDVTcduIAAE_Ncr-MWAPZF3x1A7PUURZB03LteE7AmUQQi0JWsGSwzUwu8X3t35zHFAZfbwEBUEg4r8CF_p30vXLk14nz1wPqMElQiT6jOfBhPGpjwAFRn-qg3SwGl30BAuQ5WTjza4KmBCGWPUxM7ETlHuScE5-33TAckTIDhRpzH50TeBZQwrXgAaStmPswshX"/>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-serif text-on-surface">Smoked Tiger Prawns</h4>
+                        <div class="text-xl font-serif text-primary">$38</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Small Card 2 -->
+            <div class="md:col-span-4 group menu-card relative overflow-hidden bg-surface-container">
+                <div class="aspect-[1/1] overflow-hidden">
+                    <img alt="Saffron Salad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX3iqJ_ntM-kM4-WC_R8BWdm9Mx0GhyZj26ve67S3ahefPaRlnZnTkkeaJogHidJK1n6VMY9LCvtshKHvzBi4xZhofrLEGiX6oPTS6Er6e2ffkQY0vEuUJ16n59-u5XeD-8A8g7HiJOZEiQfQJN4WO7xOdwgQXsxX5NXyuagdSxcdqR9u3TgD-rTcHzUB7KjTXapOw9Bmk9NNIPNgJJYn3EsvhBLOvccIZ793rL7HsvjGW8FAwHtS1rWvdh7pm257BZwkfIwlabraU"/>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start">
+                        <h4 class="text-xl font-serif text-on-surface">Persian Saffron Salad</h4>
+                        <div class="text-xl font-serif text-primary">$24</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Medium Card -->
+            <div class="md:col-span-8 group menu-card relative overflow-hidden bg-surface-container">
+                <div class="flex flex-col md:flex-row h-full">
+                    <div class="w-full md:w-1/2 overflow-hidden">
+                        <img alt="Smoked Ribs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfTnKKIVPnYp5GFjBkuMj1-HzvuJaFouQf6tKQ4yq5bqvlNirE1I6KN-0vSO4epIfSryvtkg75fjLkmZT6G213qiap-IYBwi4K2Jfbz_votk9ZrwzmBjqqQf83_QWZyZOqRSuQj_2LbXTN4iXCyTTqP6M7tqzpGp4K0beNHOijPxfgGQ3XOXzsEX25UW-iDuhfS4zMmEy-tJrro9O66ayjtVjOIfh_oFGafBQ0jsW6OfYIG1gvaqBsYX75Sg5ngK7vHE5dsrdOnrQa"/>
+                    </div>
+                    <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                        <h4 class="text-3xl font-serif text-on-surface">Charred Malai Chops</h4>
+                        <p class="text-on-surface-variant mt-4 leading-relaxed">Infused with cardamom and white pepper, grilled over applewood coal.</p>
+                        <div class="text-3xl font-serif text-primary mt-8">$48</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-32 bg-surface px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-16">
+            <div class="lg:col-span-1">
+                <h2 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-8">The Experience</h2>
+                <h3 class="text-5xl font-serif text-on-surface leading-tight">Word from <br/>Our Guests.</h3>
+                <div class="mt-12 flex gap-2">
+                    <div class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary/10 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">west</span>
+                    </div>
+                    <div class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary/10 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined">east</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-2 grid md:grid-cols-2 gap-8">
+                <div class="p-10 bg-surface-container-low border-b-2 border-primary">
+                    <div class="flex text-primary mb-8 gap-1">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-xl font-serif italic text-on-surface leading-relaxed mb-8">
+                        "The best Biryani I have ever tasted outside of Lucknow. The service is impeccable and the atmosphere feels truly like an editorial masterpiece."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img alt="Customer" class="w-12 h-12 rounded-full object-cover" 
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhudryu0f8fXeroK8FEeF8UCFkIlTUA5sMOsREPnthNBhu83VMlmeqJ_AMZEjOSSkClU6Lti0p2kvNI9uhOon3E2i5-JkQy8HsU8sMyS0gPAuqBs-WIoR2SfIrn5SXFzmLgGEFI8EVZfK7qWoq-DwFK3Tl1xOIXnPuo70DNVUhkDT3Hl7SygfPbyQDYfUoRIhW1CEXRDp0HO043W35IvJOO8NO1oTuBv6dzjzvhMpCiAmTWTbPA6vBNw3vX_9r1JXsUY4S2SxkyRFR"/>
+                        <div>
+                            <p class="font-label text-xs uppercase tracking-widest text-on-surface">Julian Thorne</p>
+                            <p class="text-[10px] text-on-surface-variant">Food Critic, The Daily Mirror</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-10 bg-surface-container-low border-b-2 border-outline-variant/30 opacity-60">
+                    <div class="flex text-primary mb-8 gap-1">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="text-xl font-serif italic text-on-surface leading-relaxed mb-8">
+                        "An atmosphere of absolute luxury. Every dish is served like a piece of art. The Saffron Salad was surprisingly the star of the evening."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img alt="Customer" class="w-12 h-12 rounded-full object-cover" 
+                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdKIg5JGpB2jx2kkCojEoFpv31PjOtJNNrKGTonRRqfhRN8pTZLTA1dh-Ke4a21HCJauhiI-of_BFfJ5xDY5jM2gOITuXkUQ0Ye5V7qpq8994c7AX2oI714c88OpNHkjh_LgRhjzGUICHX32e-bsn3Wy14sYtld021mIPKDaE5-xELgzDL9U9Vfdiogs5ljoUsC0IcYBCqAe_d15RPErcleolDJrtZ9IgNS-TFAoRmLP2PEBK9pbkBjkk3xR9JYiljTBhtYHuTRX1B"/>
+                        <div>
+                            <p class="font-label text-xs uppercase tracking-widest text-on-surface">Elena Rodriguez</p>
+                            <p class="text-[10px] text-on-surface-variant">Gastronomy Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Teaser -->
+<section id="gallery" class="py-12 bg-surface-container-lowest overflow-hidden">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 px-4">
+        <div class="aspect-square bg-surface-container overflow-hidden">
+            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp8aCuuVjnrp9eaIk337JeuCXnRZfs9xz2AqS92xuszjXvW0YzaBcT7TQYIIJlcdLAjDdrkPOxLEVwL9WECE99DLX88BbtTPi4Wgo-s2QqnBlFzdkP-xWCUAkr8fhqDHAKvs8k-g99hq6uIm-39gm9Rtcp5N21VX78jQyg6-wFHLZFHTu0gdlPS2gZbcqkHgEwFcBE-ofv_Cmcs_kjC9AKeh3hy3Kc5mJrzLKYaPIY30U3xAxqfRf0jl-7Xr7bgAbgEbBWe2xcB8hc"/>
+        </div>
+        <div class="aspect-square bg-surface-container overflow-hidden">
+            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzQ9Ajwh3RXsn3nVOJK0uQDVu8NMYFC-6O1k20_iDhN6XZLERuQAAMQ4oH0JzHFRpuD_jrdjd8Xo9zCUnscHidqzbfig0_79Mesttn4TWleMigqRg0G7kOLXviUtyoYjiV2iQLcVLaoO0oTcV4DID1Z9fgi0EcRv_JUG6nXcw-4Lye3auoIXJX8Ry70yAWPX_J6dD8p1YKbm846nUqjr3ol3hNXg2LyeSw0m8mn83fCtik5XAFl5tEQ53sckV0zNdavYwFMloj_yyH"/>
+        </div>
+        <div class="aspect-square bg-surface-container overflow-hidden hidden md:block">
+            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFddyKZl9hxQ1rnLU2-6Stno8DDP8jQIrb8Vch3tXS7zN5GhSDyCCOwK3NvkT2FlwVU5fqr2Tkigc515rJYjWrcLZ1pVxdc2Bg2qINopWQOuvhgm14k-nfk3NKUu89xJ-dYaDjvifm53F5n-0_pTGw-fMCyrnmJSEax1sAoAQDnvUFAlIy_iVy-0XGPkWHai7JURpuTPAnizkMAg0n4TaRrvXNe2FZbF9Vg3HIwVKs_qkY0MHFRUcLm4WEmlkDd7hV30MDr3RDCsSB"/>
+        </div>
+        <div class="aspect-square bg-surface-container overflow-hidden hidden lg:block">
+            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2TpmNzRZeEdxZHBW-oR9dzq74JKc5mUkcXm2oifFK3NNEjSTgPPySo7jlXGE6YhGjrD2NgeBSr0DHwFZLZZJFSYqKmQGVMxulnIrBY583Icqi-J66AP-DLkB9UxyW4ZnFmiFEwRVgtlmPSUJ7HEWdEcOgkGUAUPQLfDSbmgmgloBSugZ8J6zZaMg61aFPDvA7eXUDrI8jalVgzB1JkO74F4mgwS4Zr354W9UdBrhLBvONUNnXs-2D28XHttuUm6QVvnRX_4C8dTXd"/>
+        </div>
+        <div class="aspect-square bg-surface-container overflow-hidden">
+            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfidzlLiqTLePTat3v6VDuomEKk_8JP2e7TX5vSBZpRtUTfixoPEH_gRGWArhfRIXUi3PXxHo2HI6AoUzTm0JUDeUL75UiaIguyS6L0u4FdFu1L8ftz_z1I7JLPIY8xwC4spCoaoGvZFi4Q2dHWYKD23K6GWllC4qgf0PWpTAhLmBKs31-x3MY3C_5bluNDAa_4EbyzK-Nq0PDUdlAn382Z6lec97IQnA3RF1BYKyTa7TAUijkqvgEjKqONRCRRvp24E8ZfS8T3H4U"/>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Hours -->
+<section id="contact" class="py-32 bg-surface px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24">
+        <div class="space-y-16">
+            <div class="space-y-8">
+                <h2 class="font-label text-xs uppercase tracking-[0.2em] text-primary">Inquiries</h2>
+                <h3 class="text-5xl font-serif text-on-surface">Join Us <br/>This Evening.</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Location</p>
+                    <p class="text-on-surface leading-relaxed">
+                        712 Editorial Blvd, <br/>Mayfair, London, UK
+                    </p>
+                    <a class="inline-block text-primary text-xs uppercase tracking-widest font-label border-b border-primary/30 pb-1 mt-2" href="#">Get Directions</a>
+                </div>
+                <div class="space-y-4">
+                    <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Contact</p>
+                    <p class="text-on-surface leading-relaxed">
+                        +44 (20) 7946 0123 <br/>hello@leditorial.com
+                    </p>
+                    <div class="flex gap-4 mt-2">
+                        <span class="material-symbols-outlined text-on-surface-variant">mail</span>
+                        <span class="material-symbols-outlined text-on-surface-variant">call</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-12 bg-surface-container-high relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10">
+                <span class="material-symbols-outlined text-9xl">schedule</span>
+            </div>
+            <h4 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-12">Opening Hours</h4>
+            <div class="space-y-8 relative z-10">
+                <div class="flex justify-between items-end border-b border-outline-variant/30 pb-4">
+                    <span class="font-serif text-xl text-on-surface">Monday — Friday</span>
+                    <span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">10:00 AM — 10:00 PM</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-outline-variant/30 pb-4">
+                    <span class="font-serif text-xl text-on-surface">Saturday — Sunday</span>
+                    <span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">11:00 AM — 11:00 PM</span>
+                </div>
+                <div class="pt-8">
+                    <p class="text-xs text-on-surface-variant italic mb-8">Reservations are recommended for weekend dinners.</p>
+                    <button onclick="showComingSoon()" class="w-full py-5 border border-primary text-primary font-label text-xs uppercase tracking-[0.2em] hover:bg-primary hover:text-on-primary transition-all duration-400">
+                        Book a Table Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#0E0E0E] text-[#D4AF37]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-16 border-t border-[#353534]/20">
+        <div class="space-y-8">
+            <div class="text-lg font-serif text-[#E5E2E1]">L'ÉDITORIAL</div>
+            <p class="text-[#E5E2E1] opacity-60 text-xs leading-loose max-w-xs uppercase tracking-widest font-label">
+                A culinary journey through the heart of heritage spices, delivered with modern elegance and timeless grace.
+            </p>
+            <div class="flex gap-6">
+                <a class="hover:text-[#F2CA50] transition-colors" href="#"><span class="font-label text-[10px] tracking-widest">INSTAGRAM</span></a>
+                <a class="hover:text-[#F2CA50] transition-colors" href="#"><span class="font-label text-[10px] tracking-widest">FACEBOOK</span></a>
+                <a class="hover:text-[#F2CA50] transition-colors" href="#"><span class="font-label text-[10px] tracking-widest">TIKTOK</span></a>
+            </div>
+        </div>
+        <div class="space-y-8">
+            <h5 class="font-label text-[10px] uppercase tracking-[0.2em] text-[#E5E2E1]">Navigation</h5>
+            <ul class="space-y-4">
+                <li><a href="#menu" class="text-[#E5E2E1] opacity-60 hover:opacity-100 transition-opacity font-label text-[10px] uppercase tracking-widest">Menu</a></li>
+                <li><a href="#story" class="text-[#E5E2E1] opacity-60 hover:opacity-100 transition-opacity font-label text-[10px] uppercase tracking-widest">Story</a></li>
+                <li><a href="#gallery" class="text-[#E5E2E1] opacity-60 hover:opacity-100 transition-opacity font-label text-[10px] uppercase tracking-widest">Gallery</a></li>
+                <li><a href="#contact" class="text-[#E5E2E1] opacity-60 hover:opacity-100 transition-opacity font-label text-[10px] uppercase tracking-widest">Contact</a></li>
+            </ul>
+        </div>
+        <div class="space-y-8">
+            <h5 class="font-label text-[10px] uppercase tracking-[0.2em] text-[#E5E2E1]">Newsletter</h5>
+            <p class="text-[#E5E2E1] opacity-60 text-[10px] tracking-widest uppercase">Be the first to know about our seasonal menu launches.</p>
+            <div class="relative group">
+                <input class="w-full bg-transparent border-b border-outline-variant/30 py-3 text-[10px] tracking-widest font-label focus:outline-none focus:border-primary transition-colors text-[#E5E2E1] placeholder:text-outline-variant" placeholder="EMAIL ADDRESS" type="email"/>
+                <button class="absolute right-0 top-1/2 -translate-y-1/2 text-primary">
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="px-12 py-8 border-t border-[#353534]/10 text-center md:text-left">
+        <span class="text-[#E5E2E1] opacity-40 font-label text-[9px] uppercase tracking-[0.3em]">© 2024 L'ÉDITORIAL. ALL RIGHTS RESERVED.</span>
+    </div>
+</footer>
+
+<script>
+    function showComingSoon() {
+        alert("🎉 Table Booking System is Coming Soon!\n\nWe are working hard to bring you the best reservation experience.");
+    }
+
+    // Active nav link on scroll
+    window.addEventListener('scroll', () => {
+        const sections = ['menu', 'story', 'gallery', 'contact'];
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        
+        sections.forEach(id => {
+            const section = document.getElementById(id);
+            if (section && window.scrollY >= section.offsetTop - 180) {
+                current = id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
